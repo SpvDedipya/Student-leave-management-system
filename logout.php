@@ -11,7 +11,7 @@ else{
 $sql = "SELECT * FROM `tbl_student` WHERE `rollnum` ='$active_user' ";
 $query = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($query);
-
+date_default_timezone_set("Asia/Calcutta");
 if(!$row['logintype']=='student'){
     $sql2 = "UPDATE  `admin` SET lastlogindate='".date("d-m-Y H:i:s")."' WHERE username='$active_user' ";
     $query2=mysqli_query($conn,$sql2);
